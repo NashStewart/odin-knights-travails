@@ -13,11 +13,8 @@ class Knight
 
       next_moves.each do |move|
         next if current.include?(move)
-
         path = current + [move]
-
         return path if move == target
-
         queue << path
       end
 
