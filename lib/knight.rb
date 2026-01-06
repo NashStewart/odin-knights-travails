@@ -32,28 +32,28 @@ class Knight
     y = position.last
     moves = []
 
-    # Up
+    # Up 2
     if y + 2 <= 7
-      moves << [x + 1, y + 2] if x + 1 <= 7
-      moves << [x - 1, y + 2] if x - 1 >= 0
+      moves << [x + 1, y + 2] if x + 1 <= 7 # Right 1
+      moves << [x - 1, y + 2] if x - 1 >= 0 # Left 1
     end
 
-    # Down
+    # Down 2
     if y - 2 >= 0
-      moves << [x + 1, y - 2] if x + 1 <= 7
-      moves << [x - 1, y - 2] if x - 1 >= 0
+      moves << [x + 1, y - 2] if x + 1 <= 7 # Right 1
+      moves << [x - 1, y - 2] if x - 1 >= 0 # Left 1
     end
 
-    # Right
+    # Right 2
     if x + 2 <= 7
-      moves << [x + 2, y + 1] if y + 1 <= 7
-      moves << [x + 2, y - 1] if y - 1 >= 0
+      moves << [x + 2, y + 1] if y + 1 <= 7 # Up 1
+      moves << [x + 2, y - 1] if y - 1 >= 0 # Dorn 1
     end
 
-    # Left
+    # Left 2
     if x - 2 >= 0
-      moves << [x - 2, y + 1] if y + 1 <= 7
-      moves << [x - 2, y - 1] if y - 1 >= 0
+      moves << [x - 2, y + 1] if y + 1 <= 7 # Up 1
+     moves << [x - 2, y - 1] if y - 1 >= 0 # Down 1
     end
 
     return moves
