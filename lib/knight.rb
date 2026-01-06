@@ -1,5 +1,32 @@
 class Knight
 
+  def knight_moves(start, target)
+    return [start] if start == target
+
+    visited_positions = []
+    queue = [[start]]
+    current = []
+
+    until(queue.empty?)
+      current = queue.first
+      next_moves = possible_moves(queue.first.last)
+
+      next_moves.each do |move|
+        next if current.include?(move)
+
+        path = current + [move]
+
+        return path if move == target
+
+        queue << path
+      end
+
+      queue.shift
+    end
+
+    return [start]
+  end
+
   def possible_moves(position)
     x = position.first
     y = position.last
